@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', ['App\Http\Controllers\homeController', 'index']);
-Route::get('/#services', ['App\Http\Controllers\homeController', 'inde']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::post('/contact', [HomeController::class, 'sendContact'])->name('send.contact');
 
 
